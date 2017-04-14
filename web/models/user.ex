@@ -15,6 +15,7 @@ defmodule SchoolAgenda.User do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :email, :bio])
-    |> validate_required([:name, :email, :bio])
+    |> validate_required([:name, :email])
+    |> unique_constraint(:email)
   end
 end

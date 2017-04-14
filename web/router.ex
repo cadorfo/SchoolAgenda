@@ -7,6 +7,7 @@ defmodule SchoolAgenda.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug SchoolAgenda.Plugs.UserSession
   end
 
   pipeline :api do
@@ -19,9 +20,10 @@ defmodule SchoolAgenda.Router do
     get "/", PageController, :index
     resources "/users", UserController
   end
-  
+
   scope "/auth", SchoolAgenda do
     pipe_through :browser
+    get "/delete", AuthController, :delete
 
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback

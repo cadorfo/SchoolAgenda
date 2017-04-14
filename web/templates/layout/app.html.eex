@@ -16,7 +16,12 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <%= if @conn.assigns[:current_user] do %>
+
+              <li><a href="<%= auth_path @conn, :delete %>">Log out!</a></li>
+              <% else %>
+              <li><a href="<%= auth_path @conn, :request , "google" %>">Login with Google</a></li>
+            <% end %>
           </ul>
         </nav>
         <span class="logo"></span>
