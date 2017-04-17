@@ -17,9 +17,8 @@ defmodule SchoolAgenda.AuthController do
     changeset = User.changeset(%User{}, user_params)
     user = Repo.get_by(User, email: email)
     if !user do
-      Repo.insert(changeset)
+      {:ok,user} = Repo.insert(changeset)
     end
-    IO.inspect user  
     user
   end
 

@@ -14,9 +14,13 @@ defmodule SchoolAgenda.Plugs.UserSession do
   end
 
   def login_user(conn, user_id) do
-    user = Repo.get!(User, user_id)
-    conn
-    |> assign(:current_user, user)
-  end
+    user = Repo.get(User, user_id)
 
+    case user do
+      %User{} ->
+        conn |> assign(:current_user, user)
+      nil ->
+        conn |> configure_session(drop: true)
+    end
+  end
 end
