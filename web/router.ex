@@ -19,6 +19,7 @@ defmodule SchoolAgenda.Router do
 
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/teachers", TeacherController
   end
 
   scope "/auth", SchoolAgenda do
