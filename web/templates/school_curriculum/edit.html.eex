@@ -1,0 +1,6 @@
+<h2>Edit school curriculum</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: school_curriculum_path(@conn, :update, @school_curriculum) %>
+
+<%= link "Back", to: school_curriculum_path(@conn, :index) %>

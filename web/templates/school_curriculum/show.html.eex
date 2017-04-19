@@ -1,0 +1,13 @@
+<h2>Show school curriculum</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @school_curriculum.title %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: school_curriculum_path(@conn, :edit, @school_curriculum) %>
+<%= link "Back", to: school_curriculum_path(@conn, :index) %>

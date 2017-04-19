@@ -1,0 +1,26 @@
+<h2>Listing school curriculums</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for school_curriculum <- @school_curriculums do %>
+    <tr>
+      <td><%= school_curriculum.title %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: school_curriculum_path(@conn, :show, school_curriculum), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: school_curriculum_path(@conn, :edit, school_curriculum), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: school_curriculum_path(@conn, :delete, school_curriculum), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New school curriculum", to: school_curriculum_path(@conn, :new) %>
