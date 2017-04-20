@@ -7,7 +7,7 @@ defmodule SchoolAgenda.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug SchoolAgenda.Plugs.UserSession
+    plug SchoolAgenda.Plugs.UserSession    
   end
 
   pipeline :api do

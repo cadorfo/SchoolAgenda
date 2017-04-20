@@ -17,3 +17,7 @@ msgstr "Bem vindo à %{name}"
 #: web/templates/layout/app.html.eex:38
 msgid "Users"
 msgstr "Usuários"
+
+#: web/templates/layout/app.html.eex:39
+msgid "Teachers"
+msgstr "Professores"

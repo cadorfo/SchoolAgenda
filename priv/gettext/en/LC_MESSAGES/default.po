@@ -17,3 +17,7 @@ msgstr ""
 #: web/templates/layout/app.html.eex:38
 msgid "Users"
 msgstr "Users!"
+
+#: web/templates/layout/app.html.eex:39
+msgid "Teachers"
+msgstr ""
